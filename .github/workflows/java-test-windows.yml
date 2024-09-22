@@ -3,10 +3,10 @@ name: Java Tests (Windows)
 on:
   push:
     branches:
-      - main
+      - src.com.interpreter.yaz.main
   pull_request:
     branches:
-      - main
+      - src.com.interpreter.yaz.main
 
 jobs:
   test:

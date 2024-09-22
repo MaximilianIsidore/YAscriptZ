@@ -1,6 +1,7 @@
 # YAscriptZ
 
 **YAscriptZ** is a modern scripting language inspired by Lox, designed as a learning tool for understanding how interpreters work. Built on Java, YAscriptZ aims to simplify the complexities of language design while offering a clean and intuitive syntax.
+**Extention** .yaz
 
 ## Features
 

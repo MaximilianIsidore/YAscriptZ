@@ -22,6 +22,14 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
 
+      - name: Download Checkstyle
+        run: |
+          curl -L -o checkstyle.zip https://github.com/checkstyle/checkstyle/releases/latest/download/checkstyle-x.x-all.jar
+          mkdir checkstyle
+          move checkstyle.zip checkstyle
+          cd checkstyle
+          unzip checkstyle.zip
+
       - name: Run Checkstyle
         run: |
-          ./gradlew.bat check # Assuming Checkstyle is configured in your Gradle file
+          java -jar checkstyle/checkstyle-x.x-all.jar -c /google_checks.xml src/**/*.java

@@ -22,6 +22,10 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
 
-      - name: Run Tests with Gradle/Maven
+      - name: Compile Java files
         run: |
-          ./gradlew.bat test # Or `mvn test` if you're using Maven
+          javac -d out src/**/*.java src/test/**/*.java
+
+      - name: Run Tests
+        run: |
+          java -cp out org.junit.runner.JUnitCore com.interpreter.yaz.YourTestClass # Replace with your test class path

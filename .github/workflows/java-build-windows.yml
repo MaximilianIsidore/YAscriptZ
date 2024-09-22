@@ -22,6 +22,10 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
 
-      - name: Build with Gradle/Maven
+      - name: Compile Java files
         run: |
-          ./gradlew.bat build # Or `mvn install` if you're using Maven
+          javac -d out src/**/*.java
+
+      - name: Run Java program
+        run: |
+          java -cp out com.interpreter.yaz.Main # Replace with your main class path
